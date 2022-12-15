@@ -1,0 +1,22 @@
+# Device release name
+ro.product.name=RMX3081
+ro.product.product.device=RMX3081
+
+# product/board stuff
+ro.product.board=atoll
+ro.board.platform=atoll
+
+# USB and MTP stuff
+sys.usb.controller=a600000.dwc3
+persist.sys.usb.config=mtp,adb
+persist.sys.isUsbOtgEnabled=true
+
+# Dynamic partition
+ro.boot.dynamic_partitions=true
+
+# AVB
+ro.boot.avb_version=1.0
+ro.boot.vbmeta.avb_version=1.0
+
+# Encryption
+ro.adb.secure=0
