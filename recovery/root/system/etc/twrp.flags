@@ -5,9 +5,8 @@
 # mount_point        fstype    device                 device2                  flags
 
 # Logical partitions
-/product             ext4      /dev/block/mapper/product                       flags=display="Product";backup=1
-/my_product          ext4      /dev/block/mapper/my_product                    flags=display="My-product";logical;backup=1
-/my_engineering      ext4      /dev/block/mapper/my_engineering                flags=display="My-engineering";logical;backup=1
+/my_product          ext4      /dev/block/mapper/my_product                    flags=display="My-product";backup=1
+/my_engineering      ext4      /dev/block/mapper/my_engineering                flags=display="My-engineering";backup=1
 
 # Boot,recovery,cache
 /boot                emmc      /dev/block/bootdevice/by-name/boot              flags=display="Boot";backup=1;flashimg=1
