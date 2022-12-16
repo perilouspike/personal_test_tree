@@ -16,7 +16,12 @@ product                                                 /product               e
 vendor                                                  /vendor                ext4    ro,barrier=1,discard       wait,logical,first_stage_mount
 odm                                                     /odm                   ext4    ro,barrier=1,discard       wait,logical,first_stage_mount
 
+# OPlus-related Partitions
+my_product                                              /my_product            erofs   ro                         wait,logical      
+my_engineering                                          /my_engineering        erofs   ro                         wait,logical
 
+my_product                                              /my_product            ext4    ro,barrier=1,discard       wait,logical,first_stage_mount
+my_engineering                                          /my_engineering        ext4    ro,barrier=1,discard       wait,logical,first_stage_mount
 
 # Other
 /dev/block/bootdevice/by-name/cache                     /cache                 ext4    nosuid,noatime,nodev,barrier=1              wait,check,first_stage_mount,backup=0
