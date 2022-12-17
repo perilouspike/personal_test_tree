@@ -20,7 +20,7 @@
 
 # Persistent
 /persist             ext4      /dev/block/sda2                                 flags=display="Persist";backup=1
-/storage             ext4      /data/media/0                                   flags=display="Internal Storage";backup=1;removable;usermrf;fsflags="bind,utf8"
+#/storage             ext4      /data/media/0                                   flags=display="Internal Storage";backup=1;removable;usermrf;fsflags="bind,utf8"
 /metadata            ext4      /dev/block/sda8                                 flags=display="Metadata";backup=1
 
 # AVB partitions
