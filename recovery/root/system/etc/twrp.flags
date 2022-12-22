@@ -16,7 +16,8 @@
 
 # Other Partitions
 /metadata            ext4      /dev/block/sda8                                 flags=display="Metadata"
-/storage             ext4      /data/media/0                                   flags=display="Internal Storage";backup=1;removable;usermrf;fsflags="bind,utf8"
+#/storage             ext4      /data/media/0                                   flags=display="Internal Storage";backup=1;removable;usermrf;fsflags="bind,utf8"
+/sdcard              f2fs      /dev/block/dm-15                                flags=display="Internal Storage";backup=1;removable;usermrf;fsflags="bind,utf8"
 
 # AVB partitions
 /dtbo                emmc      /dev/block/bootdevice/by-name/dtbo              flags=display="Dtbo";flashimg;backup=1
