@@ -4,34 +4,25 @@
 
 # mount_point        fstype    device                 device2                  flags
 
-# Logical partitions
-/my_product          ext4      /dev/block/mapper/my_product                    flags=display="My-product";backup=1
-/my_engineering      ext4      /dev/block/mapper/my_engineering                flags=display="My-engineering";backup=1
-
-# Boot,recovery,cache
-/boot                emmc      /dev/block/bootdevice/by-name/boot              flags=display="Boot";backup=1;flashimg=1
-/recovery            emmc      /dev/block/bootdevice/by-name/recovery          flags=display="Recovery";backup=1;flashimg=1
-/cache               ext4      /dev/block/by-name/cache                        flags=display="Cache";wipeingui
+# Flashable Partitions
+/boot                emmc      /dev/block/bootdevice/by-name/boot
+/recovery            emmc      /dev/block/bootdevice/by-name/recovery          flags=display="Recovery";backup=1;flashimg
+/persist             ext4      /dev/block/sda2                                 flags=display="Persist";backup=1
 
 # Modem partitions
 /modem               emmc      /dev/block/sde4                                 flags=backup=1;display="Modem"
 /bluetooth           emmc      /dev/block/bootdevice/by-name/bluetooth         flags=backup=1;subpartitionof=/modem
 /dsp                 emmc      /dev/block/bootdevice/by-name/dsp               flags=backup=1;subpartitionof=/modem
 
-# Persistent
-/persist             ext4      /dev/block/sda2                                 flags=display="Persist";backup=1
-/metadata            ext4      /dev/block/sda8                                 flags=display="Metadata";backup=1
-/data                f2fs      /dev/block/bootdevice/by-name/userdata          flags=display="User_data";backup=1
-
-#Additional
-/storage             ext4      /data/media/0                                   flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
-/sdcard              f2fs      /dev/block/dm-15                                flags=display="Internal_Storage";usermrf;backup=1;fsflags="bind";removable
+# Other Partitions
+/metadata            ext4      /dev/block/sda8                                 flags=display="Metadata"
+/storage             ext4      /data/media/0                                   flags=display="Internal Storage";backup=1;removable;usermrf;fsflags="bind,utf8"
 
 # AVB partitions
-/dtbo                emmc      /dev/block/bootdevice/by-name/dtbo              flags=display="Dtbo";flashimg=1;backup=1
-/vbmeta_vendor       emmc      /dev/block/bootdevice/by-name/vbmeta_vendor     flags=display="Vbmeta-Vendor";flashimg=1;backup=1
-/vbmeta_system       emmc      /dev/block/bootdevice/by-name/vbmeta_system     flags=display="Vbmeta-System";flashimg=1;backup=1
-/vbmeta              emmc      /dev/block/bootdevice/by-name/vbmeta            flags=display="Vbmeta";flashimg=1;backup=1
+/dtbo                emmc      /dev/block/bootdevice/by-name/dtbo              flags=display="Dtbo";flashimg;backup=1
+/vbmeta_vendor       emmc      /dev/block/bootdevice/by-name/vbmeta_vendor     flags=display="Vbmeta_Vendor";flashimg;backup=1
+/vbmeta_system       emmc      /dev/block/bootdevice/by-name/vbmeta_system     flags=display="Vbmeta_System";flashimg;backup=1
+/vbmeta              emmc      /dev/block/bootdevice/by-name/vbmeta            flags=display="Vbmeta";flashimg;backup=1
 
 # EFS partitions
 /modemst1            emmc      /dev/block/sdf4                                 flags=backup=1;display="EFS"
@@ -40,7 +31,7 @@
 /fsc                 emmc      /dev/block/sdf11                                flags=backup=1;subpartitionof=/modemst1
 
 # Firmware-update partitions
-/abl                 emmc      /dev/block/sde8                                 flags=backup=1;display="Firmware-update"
+/abl                 emmc      /dev/block/sde8                                 flags=backup=1;display="Firmware update"
 /aop                 emmc      /dev/block/sde1                                 flags=backup=1;subpartitionof=/abl
 /apdp                emmc      /dev/block/sde25                                flags=backup=1;subpartitionof=/abl
 /apdp_full           emmc      /dev/block/sde26                                flags=backup=1;subpartitionof=/abl
@@ -91,5 +82,5 @@
 /oplusreserve1       emmc      /dev/block/sdf6                                 flags=backup=1;subpartitionof=/abl                              
 
 # Removable storage
-/external_sd         vfat      /dev/block/mmcblk0p1            /dev/block/mmcblk0                flags=display="Micro_SD";storage;wipeingui;removable;fsflags="nosuid,nodev,utf8"
-/usb_otg             vfat      /dev/block/sdg1                 /dev/block/sdg                    flags=display="USB_Storage";storage;wipeingui;removable;fsflags="utf8"
+/external_sd         vfat      /dev/block/mmcblk0p1            /dev/block/mmcblk0                flags=display="Micro SD";storage;wipeingui;removable;fsflags="nosuid,nodev,utf8"
+/usb_otg             vfat      /dev/block/sdg1                 /dev/block/sdg                    flags=display="USB Storage";storage;wipeingui;removable;fsflags="utf8"
