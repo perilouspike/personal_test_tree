@@ -41,3 +41,9 @@ on post-fs
 
 on boot
     start health-hal-2-1
+
+service hidl_memory /system/bin/hw/android.hidl.allocator@1.0-service
+    user root
+    group root
+    disabled
+    seclabel u:r:recovery:s0
