@@ -192,6 +192,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_INCLUDE_NTFS_3G := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TW_EXCLUDE_DEFAULT_USB_INIT := true
+TW_DEVICE_VERSION := perilouspike
 
 # Fix stock .ozip installation
 TW_SKIP_COMPATIBILITY_CHECK := true
