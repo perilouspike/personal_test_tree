@@ -24,11 +24,8 @@
 /data                f2fs      /dev/block/bootdevice/by-name/userdata          flags=display="User_data";backup=1
 
 #Additional
-/sdcard              ext4      /data/media/0                                   flags=display="Internal-Storage";backup=1;removable;usermrf;fsflags="bind,utf8"
-/storage             ext4      /data/media/0                                   flags=display="Internal_Storage";usermrf;backup=1;fsflags="bind";removable
-/sdcard              ext4      /dev/block/dm-15                                flags=display="Internal*Storage";usermrf;backup=1;fsflags="bind";removable
-/sdcard              f2fs      /dev/block/dm-15                                flags=display="Internal*Storage";usermrf;backup=1;fsflags="bind";removable
-
+/storage             ext4      /data/media/0                                   flags=display="Internal Storage";usermrf;backup=1;fsflags="bind";removable
+/sdcard              f2fs      /dev/block/dm-15                                flags=display="Internal_Storage";usermrf;backup=1;fsflags="bind";removable
 
 # AVB partitions
 /dtbo                emmc      /dev/block/bootdevice/by-name/dtbo              flags=display="Dtbo";flashimg=1;backup=1
