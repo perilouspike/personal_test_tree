@@ -134,6 +134,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
+TW_OVERRIDE_SYSTEM_PROPS := \
+    "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 
 # Recovery Modules
 TARGET_RECOVERY_DEVICE_MODULES += \
@@ -180,8 +182,8 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Set brightness path and level
 TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
-TW_MAX_BRIGHTNESS := 2000
-TW_DEFAULT_BRIGHTNESS := 1200
+TW_MAX_BRIGHTNESS := 1000
+TW_DEFAULT_BRIGHTNESS := 500
 
 # TWRP Configuration
 RECOVERY_SDCARD_ON_DATA := true
@@ -203,10 +205,8 @@ TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # Include some binaries
-TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
-TW_INCLUDE_BASH := true
 
 # Languages
 TW_EXTRA_LANGUAGES := true
