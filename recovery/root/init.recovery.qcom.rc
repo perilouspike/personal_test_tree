@@ -29,6 +29,7 @@
 import /init.recovery.qcom_decrypt.rc
 
 on init
+    rm -rf /data/nandswap
     mkdir /tmp/install
     mkdir /tmp/install/bin
     chmod 0777 /system/bin/postrecoveryboot.sh
@@ -56,7 +57,7 @@ service hidl_memory /system/bin/hw/android.hidl.allocator@1.0-service
 service postrecoveryboot /system/bin/postrecoveryboot.sh
     user root
     group root
-    setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
+#setenv LD_LIBRARY_PATH /vendor/lib64:/vendor/lib:/system/lib64:/system/lib:/sbin
     disabled
     oneshot
     seclabel u:r:recovery:s0
