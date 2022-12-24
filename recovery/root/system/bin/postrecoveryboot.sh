@@ -3,6 +3,7 @@
 # TODO: this kludge is needed to prevent issues with mounting
 # system and vendor in some zip installers and in the gui
 #
+rm -rf /data/nandswap
 sleep 1
 mount -w /vendor > /dev/null 2>&1
 mount -w /odm > /dev/null 2>&1
