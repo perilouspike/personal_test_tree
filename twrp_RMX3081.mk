@@ -22,6 +22,9 @@ $(call inherit-product, device/realme/RMX3081/device.mk)
 # Inherit some common twrp stuff.
 $(call inherit-product, vendor/twrp/config/common.mk)
 
+# Inherit from PBRP-common stuff, if building PBRP.
+$(call inherit-product-if-exists, vendor/pb/config/common.mk)
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
