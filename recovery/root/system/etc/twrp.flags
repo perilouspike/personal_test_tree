@@ -22,6 +22,7 @@
 
 # Other Partitions
 /metadata            ext4      /dev/block/sda8                                 flags=display="Metadata";wrappedkey
+/data                f2fs      /dev/block/sda10
 /storage             ext4      /data/media/0                                   flags=display="Internal Storage";backup=1;removable;usermrf;fsflags="bind,utf8"
 
 # AVB partitions
