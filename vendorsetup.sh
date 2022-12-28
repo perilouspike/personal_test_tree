@@ -25,6 +25,7 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_MAINTAINER="perilouspike"
 	export FOX_VERSION="R11.1"
 	export FOX_BUILD_TYPE="Unofficial-Beta"
+	export OF_MAINTAINER_AVATAR="realme_8_pro_test_tree/perilouspike.png"
 	
 	# Device Information
 	export FOX_ARCH=arm64
