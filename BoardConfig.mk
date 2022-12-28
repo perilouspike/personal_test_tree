@@ -224,3 +224,15 @@ TARGET_USES_LOGD := true
 # Other flags
 TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk" #needed for Android 11 Gapps
+
+# drift/offset
+TW_QCOM_ATS_OFFSET := 1617714502203
+
+# cure for "ELF binaries" problems
+BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+
+# deal with "error: overriding commands for target" problems
+BUILD_BROKEN_DUP_RULES := true
+
+#
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
