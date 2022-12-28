@@ -77,6 +77,9 @@ if [ "$1" = "$FDEVICE" -o "$FOX_BUILD_DEVICE" = "$FDEVICE" ]; then
 	export OF_RUN_POST_FORMAT_PROCESS=1
 	export FOX_DELETE_AROMAFM=1
 	
+	# try to prevent potential data format errors
+	export OF_UNBIND_SDCARD_F2FS=1
+
 	# let's see what are our build VARs
 	if [ -n "$FOX_BUILD_LOG_FILE" -a -f "$FOX_BUILD_LOG_FILE" ]; then
 		export | grep "FOX" >> $FOX_BUILD_LOG_FILE
