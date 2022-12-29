@@ -1,4 +1,3 @@
-#
 # Copyright (C) 2022 The Android Open Source Project
 # Copyright (C) 2022 TeamWin Recovery Project
 #
@@ -160,6 +159,10 @@ RECOVERY_LIBRARY_SOURCE_FILES += \
     $(TARGET_OUT_SHARED_LIBRARIES)/libc.so \
     $(TARGET_OUT_SHARED_LIBRARIES)/libxml2.so
 
+# Metadata
+BOARD_USES_METADATA_PARTITION := true
+BOARD_ROOT_EXTRA_FOLDERS += metadata persist
+
 # Crypto
 PLATFORM_VERSION := 99.87.36
 PLATFORM_SECURITY_PATCH := 2099-12-31
@@ -169,7 +172,6 @@ TW_INCLUDE_CRYPTO := true
 TW_INCLUDE_CRYPTO_FBE := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 TW_INCLUDE_FBE_METADATA_DECRYPT := true
-BOARD_USES_METADATA_PARTITION := true
 TW_USE_FSCRYPT_POLICY := 2
 PLATFORM_VERSION_LAST_STABLE := $(PLATFORM_VERSION)
 
@@ -204,7 +206,7 @@ TW_OZIP_DECRYPT_KEY := 0000
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
-# Include some binaries
+# resetprop and magiskboot
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 
@@ -233,6 +235,55 @@ BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # deal with "error: overriding commands for target" problems
 BUILD_BROKEN_DUP_RULES := true
+BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+
+# Statusbar icons flags
+TW_STATUS_ICONS_ALIGN := center
+TW_CUSTOM_CPU_POS := 50
+TW_CUSTOM_CLOCK_POS := 300
+TW_CUSTOM_BATTERY_POS := 800
+
+####################################################################
+# SHRP-specific lines                                              #                        
+####################################################################
+# NOTE - Dont use '-' or blank spaces in flag values , otherwise it will create build errors or other bugs in recovery (Excluding SHRP_PATH,SHRP_REC).
+
+# Mandatory flags
+
+# Path of your SHRP Tree *
+SHRP_PATH := device/realme/RMX3081
+# Maintainer name *
+SHRP_MAINTAINER := perilouspike
+# Device codename *
+SHRP_DEVICE_CODE := RMX3081
+# Recovery Type (It can be treble,normal,SAR) [Only for About Section] *
+SHRP_REC_TYPE := Treble
+# Recovery Type (It can be A/B or A_only) [Only for About Section] *
+SHRP_DEVICE_TYPE := A_only
+# Your device's recovery path, dont use blindly *
+SHRP_REC := /dev/block/bootdevice/by-name/recovery
+
+#Important flags
+
+# Emergency DownLoad mode (0 = no EDL mode, 1 = EDL mode available)
+SHRP_EDL_MODE := 1
+# Storage paths, put your device's storage paths from fstab *
+SHRP_INTERNAL := /sdcard
+SHRP_EXTERNAL := /external_sd
+SHRP_OTG := /usb_otg
+# Put 0 to disable flashlight *
+SHRP_FLASH := 1
+
+# Optional flags
+
+# SHRP padding flag (for rounded corner devices only). You have to change these values according to your device's roundness.
+SHRP_STATUSBAR_RIGHT_PADDING := 20
+SHRP_STATUSBAR_LEFT_PADDING := 80
+# SHRP Express, enables on-the-fly theme patching (also persistent) + persistent lock [Optional]
+SHRP_EXPRESS := true
+# SHRP Dark mode, use this flag to have dark theme set by default [Optional]
+SHRP_DARK := true
+# Max Brightness of LED [Optional]
+SHRP_FLASH_MAX_BRIGHTNESS := 200
 
 #
-BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
