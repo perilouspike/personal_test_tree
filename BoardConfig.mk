@@ -133,8 +133,8 @@ TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery.fstab
 TARGET_SYSTEM_PROP := $(DEVICE_PATH)/system.prop
 TARGET_VENDOR_PROP := $(DEVICE_PATH)/vendor.prop
-TW_OVERRIDE_SYSTEM_PROPS := \
-    "ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
+#TW_OVERRIDE_SYSTEM_PROPS := \
+    #"ro.build.product;ro.build.fingerprint=ro.system.build.fingerprint;ro.build.version.incremental;ro.product.device=ro.product.system.device;ro.product.model=ro.product.system.model;ro.product.name=ro.product.system.name"
 
 # Recovery Modules
 TARGET_RECOVERY_DEVICE_MODULES += \
@@ -207,6 +207,7 @@ TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # resetprop and magiskboot
+TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 
@@ -234,8 +235,8 @@ TW_QCOM_ATS_OFFSET := 1617714502203
 BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # deal with "error: overriding commands for target" problems
-BUILD_BROKEN_DUP_RULES := true
-BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
+#BUILD_BROKEN_DUP_RULES := true
+#BUILD_BROKEN_MISSING_REQUIRED_MODULES := true
 
 # Statusbar icons flags
 TW_STATUS_ICONS_ALIGN := center
