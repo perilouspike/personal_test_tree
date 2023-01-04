@@ -204,12 +204,13 @@ TW_OZIP_DECRYPT_KEY := 0000
 
 # Excludes
 TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
-BOARD_SUPPRESS_SECURE_ERASE := true
+#BOARD_SUPPRESS_SECURE_ERASE := true
 
 # resetprop and magiskboot
 TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
+TW_INCLUDE_BASH := true
 
 # Languages
 TW_EXTRA_LANGUAGES := true
@@ -229,10 +230,10 @@ TW_NO_LEGACY_PROPS := true
 TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk" #needed for Android 11 Gapps
 
 # drift/offset
-TW_QCOM_ATS_OFFSET := 1617714502203
+#TW_QCOM_ATS_OFFSET := 1617714502203
 
 # cure for "ELF binaries" problems
-BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
+#BUILD_BROKEN_ELF_PREBUILT_PRODUCT_COPY_FILES := true
 
 # deal with "error: overriding commands for target" problems
 #BUILD_BROKEN_DUP_RULES := true
