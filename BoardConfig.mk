@@ -208,7 +208,7 @@ TW_USE_SERIALNO_PROPERTY_FOR_DEVICE_ID := true
 BOARD_SUPPRESS_SECURE_ERASE := true
 
 # resetprop and magiskboot
-TW_INCLUDE_LIBRESETPROP := true
+#TW_INCLUDE_LIBRESETPROP := true
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
 TW_INCLUDE_BASH := true
@@ -227,7 +227,7 @@ TWRP_INCLUDE_LOGCAT := true
 TARGET_USES_LOGD := true
 
 # Other flags
-TW_NO_LEGACY_PROPS := true
+#TW_NO_LEGACY_PROPS := true
 #TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk" #needed for Android 11 Gapps
 
 # drift/offset
