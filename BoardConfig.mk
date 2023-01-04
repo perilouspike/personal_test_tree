@@ -42,7 +42,7 @@ ENABLE_SCHEDBOOST := true
 TARGET_BOARD_SUFFIX := _64
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := RMX3081
+TARGET_OTA_ASSERT_DEVICE := RMX3081,RMX3081L1,ossi,qssi,atoll
 
 # APEX
 DEXPREOPT_GENERATE_APEX_IMAGE := true
@@ -228,7 +228,7 @@ TARGET_USES_LOGD := true
 
 # Other flags
 TW_NO_LEGACY_PROPS := true
-TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk" #needed for Android 11 Gapps
+#TW_OVERRIDE_SYSTEM_PROPS := "ro.build.version.sdk" #needed for Android 11 Gapps
 
 # drift/offset
 TW_QCOM_ATS_OFFSET := 1617714502203
