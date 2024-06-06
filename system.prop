@@ -1,22 +1,14 @@
-# Device release name
-ro.product.name=RMX3081
-ro.product.product.device=RMX3081
+ro.postinstall.fstab.prefix=/system
 
-# product/board stuff
-ro.product.board=atoll
-ro.board.platform=atoll
+# Crypto
+ro.crypto.volume.filenames_mode=aes-256-cts
+ro.crypto.metadata.enabled=true
+ro.crypto.support_metadata_encrypt=true
 
-# USB and MTP stuff
-sys.usb.controller=a600000.dwc3
-persist.sys.usb.config=mtp,adb
-persist.sys.isUsbOtgEnabled=true
+# TEE
+ro.vendor.mtk_tee_gp_support=1
+ro.vendor.mtk_trustonic_tee_support=1
 
-# Dynamic partition
-ro.boot.dynamic_partitions=true
-
-# AVB
-ro.boot.avb_version=1.0
-ro.boot.vbmeta.avb_version=1.0
-
-# Encryption
-ro.adb.secure=0
+# Gatekeeper
+ro.hardware.kmsetkey=trustonic
+ro.hardware.gatekeeper=trustonic
