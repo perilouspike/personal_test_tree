@@ -7,7 +7,7 @@ service mobicore /system/bin/mcDriverDaemon --sfs-reformat --P1 /mnt/vendor/pers
 	-r /vendor/app/mcRegistry/05160000000000000000000000000000.drbin \
 	-r /vendor/app/mcRegistry/020b0000000000000000000000000000.drbin \
 	-r /vendor/app/mcRegistry/05070000000000000000000000000000.drbin \
-    -r /vendor/app/mcRegistry/05230000000000000000000000000000.drbin \
+        -r /vendor/app/mcRegistry/05230000000000000000000000000000.drbin \
 	-r /vendor/app/mcRegistry/030b0000000000000000000000000000.drbin \
 	-r /vendor/app/mcRegistry/03100000000000000000000000000000.drbin \
 	-r /vendor/app/mcRegistry/030c0000000000000000000000000000.drbin \

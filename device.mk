@@ -20,6 +20,12 @@ LOCAL_PATH := device/motorola/manaus
 # Dynamic Partitions
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
 
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 32
+
+# API
+PRODUCT_SHIPPING_API_LEVEL := 32
+
 # A/B
 AB_OTA_UPDATER := true
 
@@ -43,10 +49,11 @@ AB_OTA_PARTITIONS += \
 # tell update_engine to not change dynamic partition table during updates
 # needed since our qti_dynamic_partitions does not include
 # vendor and odm and we also dont want to AB update them
-TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
+#TARGET_ENFORCE_AB_OTA_PARTITION_LIST := true
 
 # Virtual A/B
 ENABLE_VIRTUAL_AB := true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota/launch_with_vendor_ramdisk.mk)
 
 # A/B
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -69,19 +76,15 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     bootctrl \
+    bootctrl.mt6879 \
     bootctrl.recovery \
-    bootctrl.mt6879.recovery
+    bootctrl.mt6879.recovery \
+    libmtk_bsg
 
 # Health HAL
 PRODUCT_PACKAGES += \
     android.hardware.health@2.1-impl \
     android.hardware.health@2.1-service    
-
-PRODUCT_PACKAGES := \
-    bootctrl.mt6879 \
-    libgptutils \
-    libz \
-    libcutils
 
 # Update Engine
 PRODUCT_PACKAGES += \
@@ -90,11 +93,6 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
-
-# Mtk plpath utils
-PRODUCT_PACKAGES += \
-    mtk_plpath_utils \
-    mtk_plpath_utils.recovery    
 
 # Recovery: Additional Libraries
 TARGET_RECOVERY_DEVICE_MODULES += \
