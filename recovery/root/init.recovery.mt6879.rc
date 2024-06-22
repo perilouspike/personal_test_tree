@@ -4,6 +4,8 @@ import /mtk-plpath-utils.rc
 
 on init
     export LD_LIBRARY_PATH /system/lib64:/vendor/lib64:/vendor/lib64/hw:/system/lib64/hw
+    setprop sys.usb.configfs 1
+    setprop sys.usb.controller "11201000.usb0"
 
 on fs
     install_keyring
