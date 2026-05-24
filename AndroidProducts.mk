@@ -17,6 +17,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_CPH2579.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_CPH2579-trunk_staging-user \
-    twrp_CPH2579-trunk_staging-userdebug \
-    twrp_CPH2579-trunk_staging-eng    
+    twrp_CPH2579
