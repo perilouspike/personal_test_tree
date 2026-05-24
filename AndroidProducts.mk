@@ -17,4 +17,4 @@ PRODUCT_MAKEFILES := \
     $(LOCAL_DIR)/twrp_CPH2579.mk
 
 COMMON_LUNCH_CHOICES := \
-    twrp_CPH2579
+    twrp_CPH2579-ap2a-eng
