@@ -1,6 +1,5 @@
-# Copyright (C) 2024 The Android Open Source Project
-# Copyright (C) 2024 TeamWin Recovery Project
-# Copyright (C) 2024 SebaUbuntu's TWRP device tree generator
+# Copyright (C) 2025 The Android Open Source Project
+# Copyright (C) 2025 TeamWin Recovery Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,10 +12,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-#
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),manaus)
+ifeq ($(TARGET_DEVICE),CPH2579)
 include $(call all-subdir-makefiles,$(LOCAL_PATH))
 endif
