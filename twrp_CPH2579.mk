@@ -24,7 +24,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/base.mk)
 $(call inherit-product, vendor/twrp/config/common.mk)
 
 # Inherit from CPH257 device
-$(call inherit-product, device/oppo/CPH2579/Device.mk)
+$(call inherit-product, device/oppo/CPH2579/device.mk)
 
 # Virtual A/B OTA
 # https://source.android.com/docs/core/ota/virtual_ab/implement#build-flags
